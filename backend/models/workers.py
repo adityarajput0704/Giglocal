@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, Enum, Float, Numeric
 from sqlalchemy.dialects.postgresql import UUID, ARRAY
-from backend.database import Base
+from database import Base
 import enum, uuid
 from geoalchemy2 import Geography
 

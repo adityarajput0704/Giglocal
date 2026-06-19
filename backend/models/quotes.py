@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, Text, ForeignKey, Enum, Numeric
 from sqlalchemy.dialects.postgresql import UUID
-from backend.database import Base
+from database import Base
 import enum, uuid
 
 

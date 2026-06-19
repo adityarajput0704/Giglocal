@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Text, ForeignKey, SmallInteger
-from backend.database import Base
+from database import Base
 from sqlalchemy.dialects.postgresql import UUID
 import uuid
 

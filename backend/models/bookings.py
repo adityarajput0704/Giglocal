@@ -1,6 +1,7 @@
-from sqlalchemy import Column, String, ForeignKey, Enum, Timestamp
-from sqlalchemy.dialects.postgresql import UUID, ARRAY
-from backend.database import Base
+from sqlalchemy import Column, DateTime, String, ForeignKey, Enum
+from sqlalchemy.dialects.postgresql import UUID
+from datetime import datetime, UTC
+from database import Base
 import enum, uuid
 
 
@@ -18,5 +19,9 @@ class Bookings(Base):
     job_id = Column(UUID(as_uuid=True), ForeignKey("jobs.id"), nullable=False)
     stripe_payment_intent_id = Column(String, nullable=False)
     status = Column(Enum(BookingStatus), nullable=False, default=BookingStatus.PENDING)
-    created_at = Column(Timestamp(timezone=True), nullable=False)
+    created_at = Column(
+         DateTime(timezone=True),
+         default=datetime.now,
+         nullable=False
+    )
 

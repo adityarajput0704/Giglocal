@@ -1,6 +1,7 @@
-from sqlalchemy import Column, Text, ForeignKey, Enum, Numeric, Timestamp
+from sqlalchemy import Column, Text, ForeignKey, Enum, Numeric, DateTime
+from datetime import datetime
 from sqlalchemy.dialects.postgresql import UUID
-from backend.database import Base
+from database import Base
 import enum, uuid
 from geoalchemy2 import Geography
 
@@ -35,4 +36,4 @@ class Jobs(Base):
 
     ai_price_low = Column(Numeric(10, 2), nullable=True)
     ai_price_high = Column(Numeric(10, 2), nullable=True)
-    expired_at = Column(Timestamp(timezone=True), nullable=False)
+    expired_at = Column(DateTime(timezone=True), nullable=False)
